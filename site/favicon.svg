@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="fsky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF8F3"/><stop offset="1" stop-color="#E8C79A"/>
+    </linearGradient>
+    <clipPath id="round"><circle cx="256" cy="256" r="256"/></clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <rect width="512" height="512" fill="url(#fsky)"/>
+    <circle cx="330" cy="222" r="58" fill="#A65432"/>
+    <path d="M0 300 Q 128 250 256 288 T 512 276 L 512 512 L 0 512 Z" fill="#12364A"/>
+    <path d="M0 400 Q 150 362 300 392 T 512 384 L 512 512 L 0 512 Z" fill="#0B2737"/>
+  </g></svg>
