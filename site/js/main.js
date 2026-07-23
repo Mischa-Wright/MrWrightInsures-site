@@ -164,7 +164,7 @@
       const endpoint = form.getAttribute('data-endpoint');
       if (!endpoint) {
         if (status) {
-          status.innerHTML = '<strong>Prototype note:</strong> in the live Tilda deployment this form emails Mischa@MrWrightInsures.com and logs to the Website Leads Google Sheet. No submission was sent from this preview.';
+          status.innerHTML = '<strong>Setup needed:</strong> Add your Formspree endpoint as a <code>data-endpoint</code> attribute on this form element. See the launch checklist for instructions.';
           status.classList.add('error');
           status.style.display = 'block';
         }

@@ -745,3 +745,20 @@ textarea { resize: vertical; min-height: 100px; }
   .hero-badge { display: none; }
   .timeline { grid-template-columns: 1fr; }
 }
+
+/* ---- Per-image crop positions (real photography) ---- */
+.hero-media img[src*="home-hero"]        { object-position: center top; }
+.hero-media img[src*="ltc-hero"]         { object-position: center top; }
+.hero-media img[src*="annuities-hero"]   { object-position: center top; }
+.hero-media img[src*="life-hero"]        { object-position: center 20%; }
+.hero-media img[src*="medicare-hero"]    { object-position: center top; }
+.hero-media img[src*="disability-hero"]  { object-position: center 25%; }
+
+/* Home hero: don't lazy-load above the fold */
+.hero-media img[src*="home-hero"] { content-visibility: auto; }
+
+/* Thumbnail crops */
+.post-card .thumb img[src*="ltc-covers"]     { object-position: center center; }
+.post-card .thumb img[src*="medicare-vs-ltc"] { object-position: center center; }
+.post-card .thumb img[src*="when-to-buy"]     { object-position: center top; }
+.post-card .thumb img[src*="cost-thumb"]      { object-position: center center; }
