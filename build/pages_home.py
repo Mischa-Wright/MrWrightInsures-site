@@ -15,7 +15,6 @@ def build(render, img_slot, CAL, GR, RAMSEY):
         <p class="supporting">We will help you choose the right starting point based on the type of insurance guidance you need.</p>
       </div>
       <div class="hero-media">
-        <span class="hero-badge">RamseyTrusted LTC Pro</span>
         {img_slot("images/generated/home-hero.jpg", "Couple in their sixties reviewing planning documents at a bright kitchen table")}
       </div>
     </div>

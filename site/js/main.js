@@ -132,6 +132,7 @@
   forms.forEach(form => {
     const status = form.querySelector('.form-status');
     const submitBtn = form.querySelector('button[type="submit"]');
+    if (status) status.setAttribute('tabindex', '-1');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -209,7 +210,11 @@
           status.style.display = 'block';
         }
       } finally {
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = submitBtn.getAttribute('data-label') || 'Send'; }
+        if (submitBtn) {
+          const label = submitBtn.getAttribute('data-label') || 'Send';
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `${label} <span class="arrow" aria-hidden="true">→</span>`;
+        }
       }
     });
   });

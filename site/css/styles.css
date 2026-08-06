@@ -68,7 +68,7 @@
   [data-reveal].is-visible { opacity: 1; transform: none; }
   .card, .service-card, .resource-card, .btn, .nav-link { transition: transform .35s ease, box-shadow .35s ease, background-color .25s ease, color .25s ease; }
   .card:hover, .service-card:hover, .resource-card:hover { transform: translateY(-6px); box-shadow: 0 18px 42px rgba(11,39,55,.14); }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(153,51,34,.24); }
+  .btn:hover { transform: translateY(-2px); }
 }
 
 /* ---------- Reset ---------- */
@@ -255,12 +255,12 @@ section.dark p { color: #C6D4DC; }
   overflow: hidden;
   display: inline-flex; align-items: center; justify-content: center;
   gap: 10px;
-  padding: 14px 26px;
+  padding: 13px 22px;
   font-family: var(--sans);
-  font-size: 0.98rem;
+  font-size: 0.94rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  border-radius: 999px;
+  border-radius: 12px;
   border: 1px solid transparent;
   text-decoration: none;
   cursor: pointer;
@@ -276,21 +276,22 @@ section.dark p { color: #C6D4DC; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.24) 50%, transparent 70%);
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.14) 50%, transparent 70%);
   transform: translateX(-120%);
-  transition: transform .55s var(--ease-out);
+  transition: transform .65s var(--ease-out);
   pointer-events: none;
 }
 .btn:hover::before { transform: translateX(120%); }
-.btn:active { transform: translateY(2px) scale(.97); box-shadow: 0 4px 10px -6px rgba(11,39,55,.45); }
+.btn:active { transform: translateY(1px) scale(.985); box-shadow: 0 4px 10px -6px rgba(11,39,55,.45); }
 .btn > * { position: relative; z-index: 1; }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--navy-grad-a) 0%, var(--navy-grad-b) 100%);
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-grad-a) 100%);
   color: var(--white);
-  box-shadow: 0 10px 24px -10px rgba(18, 63, 90, 0.5);
+  border-color: rgba(255,255,255,.12);
+  box-shadow: 0 8px 20px -10px rgba(11,39,55,.72);
 }
-.btn-primary:hover { filter: brightness(1.06); box-shadow: 0 14px 28px -10px rgba(18, 63, 90, 0.6); color: var(--white); }
+.btn-primary:hover { filter: brightness(1.08); box-shadow: 0 12px 26px -10px rgba(11,39,55,.72); color: var(--white); }
 .btn-primary .arrow {
   display: inline-flex; align-items: center; justify-content: center;
   width: 22px; height: 22px; border-radius: 999px;
@@ -308,12 +309,17 @@ section.dark p { color: #C6D4DC; }
 .btn-invert {
   background: var(--white); color: var(--navy);
   border-color: var(--navy);
-  box-shadow: 0 10px 24px -12px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 20px -12px rgba(0,0,0,0.28);
 }
 .btn-invert:hover { color: var(--navy-deep); background: var(--cream-light); border-color: var(--navy-deep); box-shadow: 0 14px 28px -10px rgba(11,39,55,.32); }
 
-.btn-sm { padding: 10px 18px; font-size: 0.88rem; }
-.btn-lg { padding: 18px 32px; font-size: 1.02rem; }
+.btn-sm { padding: 10px 16px; font-size: 0.86rem; }
+.btn-lg { padding: 16px 28px; font-size: 1rem; }
+
+/* Header links are more specific than generic button classes; keep the CTA visibly button-like. */
+.nav a.btn { padding: 10px 16px; border: 1px solid rgba(255,255,255,.12); color: var(--white); }
+.nav a.btn-primary { background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-grad-a) 100%); color: var(--white); }
+.nav a.btn-primary:hover { color: var(--white); }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
 .btn-row .aside { color: var(--ink-2); font-size: 0.92rem; }
@@ -328,7 +334,7 @@ section.dark p { color: #C6D4DC; }
 .skip-link:focus { left: 16px; top: 16px; }
 
 /* ---------- Hero ---------- */
-.hero { padding: var(--sp-9) 0 var(--sp-10); position: relative; overflow: hidden; }
+.hero { padding: var(--sp-8) 0 var(--sp-9); position: relative; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: 6fr 5fr; gap: var(--sp-8); align-items: center; }
 .hero h1 { margin-top: var(--sp-3); }
 .hero .lede { max-width: 34ch; margin-top: var(--sp-5); margin-bottom: var(--sp-6); }
@@ -347,16 +353,6 @@ section.dark p { color: #C6D4DC; }
   background: linear-gradient(180deg, transparent 60%, rgba(11, 39, 55, 0.18) 100%);
 }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; }
-
-/* Rust "stamp" ornament near hero */
-.hero-badge {
-  position: absolute; right: 16px; top: 16px; z-index: 2;
-  background: var(--rust); color: var(--white);
-  padding: 12px 20px; border-radius: 999px;
-  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: 0 12px 24px -10px rgba(166, 84, 50, 0.6);
-}
 
 /* ---------- Trust strip ---------- */
 .trust-strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: var(--sp-6) 0; background: var(--bg-alt); }
@@ -768,7 +764,6 @@ textarea { resize: vertical; min-height: 100px; }
   .footer-grid { grid-template-columns: 1fr; }
   section { padding: var(--sp-7) 0; }
   .cta-band { padding: var(--sp-8) 0; }
-  .hero-badge { display: none; }
   .timeline { grid-template-columns: 1fr; }
 }
 

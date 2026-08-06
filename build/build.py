@@ -12,7 +12,7 @@ CAL = {
     "annuity":  "https://calendly.com/insuredwright/annuity-introductory-call",
     "life":     "https://calendly.com/insuredwright/life-insurance-introductory-call",
 }
-GOOGLE_REVIEWS_URL = ("https://www.google.com/search?q=google+reveiw+mischa+wright+insurance+agency"
+GOOGLE_REVIEWS_URL = ("https://www.google.com/search?q=google+review+mischa+wright+insurance+agency"
     "&rlz=1CDGOYI_enUS777US777&hl=en-US")
 RAMSEY_URL = "https://ramseytrustedltc.com"
 
