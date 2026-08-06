@@ -7,6 +7,8 @@
   --navy-grad-b: #1C6581;
   --rust: #A65432;
   --rust-dark: #874025;
+  --brand-button: #993322;
+  --brand-button-text: #003355;
   --cream: #F5EFE5;
   --cream-light: #FBF8F3;
   --white: #FFFFFF;
@@ -61,6 +63,20 @@
   --mid: 960px;
   --narrow: 680px;
 }
+
+/* Scroll reveal and tactile hover layer. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s var(--ease-out); }
+  [data-reveal].is-visible { opacity: 1; transform: none; }
+  .card, .service-card, .resource-card, .btn, .nav-link, .hero-media img { transition: transform .35s ease, box-shadow .35s ease, background-color .25s ease, color .25s ease; }
+  .card:hover, .service-card:hover, .resource-card:hover { transform: translateY(-6px); box-shadow: 0 18px 42px rgba(11,39,55,.14); }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(153,51,34,.24); }
+  .hero-media { overflow: hidden; }
+  .hero-media:hover img { transform: scale(1.035); }
+}
+
+.btn-primary, .btn-invert, .btn-accent { background: var(--brand-button); color: var(--brand-button-text); border-color: var(--brand-button); }
+.btn-primary:hover, .btn-invert:hover, .btn-accent:hover { background: #7f291d; color: #ffffff; }
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -261,11 +277,11 @@ section.dark p { color: #C6D4DC; }
 .btn:active { transform: translateY(1px); }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--navy-grad-a) 0%, var(--navy-grad-b) 100%);
-  color: var(--white);
-  box-shadow: 0 10px 24px -10px rgba(18, 63, 90, 0.5);
+  background: var(--brand-button);
+  color: var(--brand-button-text);
+  box-shadow: 0 10px 24px -10px rgba(153, 51, 34, 0.5);
 }
-.btn-primary:hover { filter: brightness(1.06); box-shadow: 0 14px 28px -10px rgba(18, 63, 90, 0.6); color: var(--white); }
+.btn-primary:hover { filter: brightness(0.92); box-shadow: 0 14px 28px -10px rgba(153, 51, 34, 0.6); color: var(--white); }
 .btn-primary .arrow {
   display: inline-flex; align-items: center; justify-content: center;
   width: 22px; height: 22px; border-radius: 999px;
@@ -281,10 +297,10 @@ section.dark p { color: #C6D4DC; }
 .btn-ghost:hover { color: var(--rust-dark); border-color: var(--rust); background: rgba(166, 84, 50, 0.04); }
 
 .btn-invert {
-  background: var(--white); color: var(--navy);
-  box-shadow: 0 10px 24px -12px rgba(0,0,0,0.25);
+  background: var(--brand-button); color: var(--brand-button-text);
+  box-shadow: 0 10px 24px -12px rgba(153, 51, 34, 0.35);
 }
-.btn-invert:hover { color: var(--navy-deep); }
+.btn-invert:hover { color: var(--white); background: #7f291d; }
 
 .btn-sm { padding: 10px 18px; font-size: 0.88rem; }
 .btn-lg { padding: 18px 32px; font-size: 1.02rem; }

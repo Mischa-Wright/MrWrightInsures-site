@@ -2,6 +2,26 @@
 (function() {
   'use strict';
 
+  /* ---------- Scroll reveal ---------- */
+  document.querySelectorAll('main > section, .card-grid > *, .service-grid > *, .resource-grid > *, .split, .content-card').forEach(item => item.setAttribute('data-reveal', ''));
+  const revealItems = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && revealItems.length) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+    revealItems.forEach((item, index) => {
+      item.style.transitionDelay = `${Math.min(index % 4, 3) * 70}ms`;
+      revealObserver.observe(item);
+    });
+  } else {
+    revealItems.forEach(item => item.classList.add('is-visible'));
+  }
+
   /* ---------- Mobile menu ---------- */
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
